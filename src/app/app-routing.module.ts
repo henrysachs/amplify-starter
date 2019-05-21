@@ -5,6 +5,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { NutritionTableComponent } from './nutrition-table/nutrition-table.component';
 import { TreeComponent } from './tree/tree.component';
 import { AddressFormComponent } from './address-form/address-form.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -17,8 +18,13 @@ const routes: Routes = [
     component : ProfileComponent,
     data: {title: 'Profile'}
   },
+  {
+    path: 'login',
+    component : LoginComponent,
+    data: {title: 'Login'}
+  },
   { path: '',
-    redirectTo: '/dashboard',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {

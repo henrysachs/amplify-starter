@@ -8,15 +8,17 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShellComponent } from './shell/shell.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatInputModule, MatSelectModule, MatRadioModule, MatTreeModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddressFormComponent } from './address-form/address-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TreeComponent } from './tree/tree.component';
 import { NutritionTableComponent } from './nutrition-table/nutrition-table.component';
 
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
+import { MaterialModule } from './material/material.module';
+import { LoginComponent } from './login/login.component';
+import { FlipCardComponent } from './flip-card/flip-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,9 @@ import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
     ProfileComponent,
     AddressFormComponent,
     TreeComponent,
-    NutritionTableComponent
+    NutritionTableComponent,
+    LoginComponent,
+    FlipCardComponent
   ],
   imports: [
     BrowserModule,
@@ -33,23 +37,10 @@ import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatInputModule,
-    MatSelectModule,
-    MatRadioModule,
-    ReactiveFormsModule,
-    MatTreeModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    AmplifyAngularModule
+    AmplifyAngularModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AmplifyService],
   bootstrap: [AppComponent]

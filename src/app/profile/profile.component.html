@@ -1,3 +1,7 @@
-<p>
-  profile works!
-</p>
+<div class="container" [@slide]="activePane">
+  <flip-card class="section"></flip-card>
+  <flip-card class="section"></flip-card>
+</div>
+<div class="container">
+  <button (click)="togglePane()">clickme</button>
+</div>

@@ -1,1 +1,18 @@
-{}
+{
+	"auth": {
+		"cognitoba5537d4": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"storage": {
+		"s335549fe1": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		},
+		"dynamo6ee0ce91": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
