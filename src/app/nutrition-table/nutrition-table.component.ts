@@ -8,8 +8,8 @@ import { NutritionTableDataSource } from './nutrition-table-datasource';
   styleUrls: ['./nutrition-table.component.css']
 })
 export class NutritionTableComponent implements OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
   dataSource: NutritionTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
