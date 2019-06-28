@@ -15,7 +15,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TreeComponent } from './tree/tree.component';
 import { NutritionTableComponent } from './nutrition-table/nutrition-table.component';
 
-import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
+import { AmplifyAngularModule, AmplifyService, AmplifyModules } from 'aws-amplify-angular';
+import {Auth} from 'aws-amplify';
+
 import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './login/login.component';
 import { FlipCardComponent } from './flip-card/flip-card.component';
@@ -42,7 +44,7 @@ import { FlipCardComponent } from './flip-card/flip-card.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AmplifyService],
+  providers: [{ provide: AmplifyService, useFactory: () => AmplifyModules({ Auth })}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

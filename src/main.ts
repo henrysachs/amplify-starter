@@ -1,17 +1,24 @@
 import 'hammerjs';
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import {enableProdMode} from '@angular/core';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+import {AppModule} from './app/app.module';
+import {environment} from './environments/environment';
 
-import Amplify from 'aws-amplify';
+import {Auth} from 'aws-amplify';
 import amplify from './aws-exports';
-Amplify.configure(amplify);
+
+Auth.configure({
+  userPoolId: amplify.aws_user_pools_id,
+  userPoolWebClientId: amplify.aws_user_pools_web_client_id,
+  identityPoolId: amplify.aws_user_pools_web_client_id,
+  region: amplify.aws_project_region
+});
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
   .catch(err => console.error(err));
